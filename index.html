@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RXAudit</title>
+  <link rel="stylesheet" href="rxaudit.css">
+  </head>
+
+
+<body>
+
+  <!-- Header -->
+  <header class="rxa-header">
+    <div class="container">
+      <div class="rxa-header-inner">
+        <a href="#" class="rxa-logo">RX<span>Audit</span></a>
+
+        <nav class="rxa-nav" id="rxaNav">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Features</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+        </nav>
+
+        <a href="#" class="rxa-header-btn">Request Demo</a>
+
+        <div class="rxa-menu-toggle" id="rxaMenuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="rxa-hero">
+    <div class="container">
+      <div class="rxa-hero-inner">
+        
+        <div class="rxa-hero-text">
+          <div class="rxa-badge">Smart Pharmacy Billing Audit Software</div>
+          <h1>Audit Pharmacy Bills With Accuracy & Confidence</h1>
+          <p>
+            RXAudit helps pharmacies compare billing data with insurance claims, identify shortages, detect overcharges, and verify correct medicine records with a fast and reliable audit process.
+          </p>
+
+          <div class="rxa-hero-buttons">
+            <a href="#" class="rxa-btn-primary">Book a Demo</a>
+            <a href="#" class="rxa-btn-outline">Learn More</a>
+          </div>
+
+          <div class="rxa-hero-features">
+            <span>Claim Comparison</span>
+            <span>Short & Excess Detection</span>
+            <span>Accurate Audit Reports</span>
+          </div>
+        </div>
+
+        <div class="rxa-hero-card">
+          <div class="rxa-card-top">
+            <h3>Audit Summary</h3>
+            <span class="rxa-status">Live</span>
+          </div>
+
+          <div class="rxa-stat-grid">
+            <div class="rxa-stat-box">
+              <h4>Claims Reviewed</h4>
+              <strong>1,248</strong>
+            </div>
+            <div class="rxa-stat-box">
+              <h4>Issues Found</h4>
+              <strong>86</strong>
+            </div>
+            <div class="rxa-stat-box">
+              <h4>Short Items</h4>
+              <strong>24</strong>
+            </div>
+            <div class="rxa-stat-box">
+              <h4>Excess Items</h4>
+              <strong>18</strong>
+            </div>
+          </div>
+
+          <div class="rxa-audit-list">
+            <h5>Recent Audit Results</h5>
+            <ul>
+              <li><span>Amoxicillin 500mg</span> <strong>Matched</strong></li>
+              <li><span>Metformin 850mg</span> <strong>Short Qty</strong></li>
+              <li><span>Atorvastatin 20mg</span> <strong>Excess Qty</strong></li>
+              <li><span>Omeprazole 40mg</span> <strong>Matched</strong></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  
+
+
+<!--Demo Section Start-->
+
+
+<section>
+  <div class="rx-wrapper">
+    <div class="rx-heading">
+        <div class="rxs-faq-icon-box">Rx</div>
+      <h2>RXAudit Interactive Demo</h2>
+      <p>
+        One click. Smart pharmacy billing reconciliation. Upload files, match insurance and billing records, then instantly review shortages, excess entries, and matched claims.
+      </p>
+    </div>
+
+    <!-- TOP 3 STEP SECTION -->
+    <div class="rx-demo-card">
+      <div class="rx-steps-grid">
+        <div class="rx-step-box" id="step1">
+          <div class="rx-step-label">Upload Files</div>
+          <div class="rx-icons-row">
+            <div class="rx-icon-card">📄</div>
+            <div class="rx-icon-card">💊</div>
+            <div class="rx-icon-card">🧾</div>
+          </div>
+          <div class="rx-step-status">
+            Upload pharmacy billing file, insurance claim data, and medicine record sheet.
+          </div>
+        </div>
+
+        <div class="rx-step-box" id="step2">
+          <div class="rx-step-label">Match & Analyze</div>
+          <div class="rx-compare-list">
+            <div class="rx-compare-item">
+              <span>NDC Matching</span>
+              <span class="rx-check">✓</span>
+            </div>
+            <div class="rx-compare-item">
+              <span>Quantity Check</span>
+              <span class="rx-check">✓</span>
+            </div>
+            <div class="rx-compare-item">
+              <span>Variance Flags</span>
+              <span class="rx-check">✓</span>
+            </div>
+          </div>
+          <div class="rx-step-status">
+            Compare bill data against insurance response and detect short, excess, and matched items.
+          </div>
+        </div>
+
+        <div class="rx-step-box" id="step3">
+          <div class="rx-step-label">View Result</div>
+          <div class="rx-view-stats">
+            <div class="rx-mini-stat">
+              <strong id="topMatched">847</strong>
+              <span>Matched</span>
+            </div>
+            <div class="rx-mini-stat">
+              <strong id="topShort">23</strong>
+              <span>Short</span>
+            </div>
+            <div class="rx-mini-stat">
+              <strong id="topExcess">15</strong>
+              <span>Excess</span>
+            </div>
+          </div>
+          <div class="rx-step-status">
+            Generate audit summary, charts, and detailed reconciliation report.
+          </div>
+        </div>
+      </div>
+
+      <div class="rx-demo-controls">
+        <button class="rx-run-btn" id="runDemoBtn">Run the Demo</button>
+        <div class="rx-demo-status" id="demoStatus">Ready to simulate billing reconciliation.</div>
+      </div>
+    </div>
+
+    <!-- BOTTOM DASHBOARD -->
+    <div class="rx-dashboard" id="rxDashboard">
+      <div class="rx-card rx-chart-card">
+        <div class="rx-chart-header">
+          <div class="rx-chart-left">
+            <h5>Insurance Claims</h5>
+            <div class="rx-claims-row">
+              <h3 id="claimValue">$1.8M</h3>
+              <div class="rx-growth" id="claimGrowth">▲ 30.5%</div>
+            </div>
+          </div>
+
+          <div class="rx-chart-right">
+            <span>Claims</span>
+            <strong>$</strong>
+          </div>
+        </div>
+
+        <div class="rx-legend">
+          <div class="rx-legend-item"><span class="rx-dot dot-a"></span> Insurance A</div>
+          <div class="rx-legend-item"><span class="rx-dot dot-b"></span> Insurance B</div>
+          <div class="rx-legend-item"><span class="rx-dot dot-c"></span> Insurance C</div>
+        </div>
+
+        <div class="rx-chart-area">
+          <div class="rx-grid-line g1"></div>
+          <div class="rx-grid-line g2"></div>
+          <div class="rx-grid-line g3"></div>
+          <div class="rx-grid-line g4"></div>
+          <div class="rx-grid-line g5"></div>
+
+          <div class="rx-y-labels">
+            <span>100K</span>
+            <span>75K</span>
+            <span>50K</span>
+            <span>25K</span>
+            <span>0</span>
+          </div>
+
+          <svg class="rx-chart-svg" viewBox="0 0 1000 250" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="fillA" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#4361ff" stop-opacity="0.18"/>
+                <stop offset="100%" stop-color="#4361ff" stop-opacity="0.03"/>
+              </linearGradient>
+            </defs>
+
+            <path id="areaA" fill="url(#fillA)" stroke="none"></path>
+<path id="lineA" fill="none" stroke="#4361ff" stroke-width="4" stroke-linecap="round"></path>
+<path id="lineB" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"></path>
+<path id="lineC" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"></path>
+          </svg>
+        </div>
+
+        <div class="rx-months">
+          <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+          <span>May</span><span>Jun</span><span>Jul</span><span>Aug</span>
+          <span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+        </div>
+      </div>
+
+      <div class="rx-tabs">
+        <button class="rx-tab-btn" data-tab="all">All</button>
+        <button class="rx-tab-btn active" data-tab="A">Insurance A</button>
+        <button class="rx-tab-btn" data-tab="B">Insurance B</button>
+        <button class="rx-tab-btn" data-tab="C">Insurance C</button>
+      </div>
+
+      <div class="rx-card rx-report-card">
+        <h5>Your Reconciliation Report</h5>
+        <div class="rx-table-wrap">
+          <table class="rx-report-table">
+            <thead>
+              <tr>
+                <th>NDC</th>
+                <th>Drug Name</th>
+                <th>Billed</th>
+                <th>Purch</th>
+                <th>Delta</th>
+              </tr>
+            </thead>
+            <tbody id="reportTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Demo Section End-->
+
+
+<!--NDC Swap Demo Section Start-->
+
+
+<section class="ndc-swap-demo">
+  <div class="ndc-demo-container">
+    <div class="ndc-demo-header">
+        <div class="rxs-faq-icon-box">Rx</div>
+      <h2>What Is an <span>NDC Swap</span>?</h2>
+      <p>
+        You dispensed the right drug - but billed it under an old or mismatched NDC.
+        It happens when codes change, package sizes shift, or a different manufacturer ships.
+        The result? A shortage on paper that doesn't exist on your shelf, and money you'll never get back.
+      </p>
+    </div>
+
+    <div class="ndc-cards-wrap" id="ndcCardsWrap">
+      <div class="ndc-card ndc-left-card">
+        <div class="ndc-card-icon">⚗</div>
+        <div class="ndc-card-dot"></div>
+        <h3>Ibuprofen 200mg</h3>
+        <p class="ndc-code">00169-6339-10</p>
+        <div class="ndc-amount ndc-negative" id="leftAmount">-300</div>
+        <div class="ndc-label">SHORTAGE</div>
+      </div>
+
+      <div class="ndc-swap-badge" id="swapBadge">
+        <span>🔗</span>
+        <span>Same Drug, Different Code</span>
+      </div>
+
+      <div class="ndc-card ndc-right-card">
+        <div class="ndc-card-icon">⚗</div>
+        <div class="ndc-card-dot"></div>
+        <h3>Ibuprofen 200mg</h3>
+        <p class="ndc-code">45802-1701-01</p>
+        <div class="ndc-amount ndc-positive" id="rightAmount">+300</div>
+        <div class="ndc-label">SURPLUS</div>
+      </div>
+
+      <div class="ndc-scan-line" id="scanLine"></div>
+    </div>
+
+    <div class="ndc-result" id="ndcResult">
+      <span class="neg">-300</span>
+      <span class="eq-symbol">+</span>
+      <span class="pos">+300</span>
+      <span class="eq-symbol">=</span>
+      <span class="zero">0</span>
+    </div>
+
+    <div class="ndc-demo-btn-wrap">
+      <button id="detectSwapBtn" class="ndc-demo-btn">Detect The Swap</button>
+    </div>
+  </div>
+</section>
+
+<!--NDC Swap Demo Section End-->
+
+
+<!--Our Solutions Section Start -->
+<section class="rxs-solutions-main">
+  <div class="rxs-solutions-container">
+
+    <div class="rxs-solutions-header">
+      <div class="rxs-solutions-top-line"></div>
+      <div class="rxs-solutions-icon-box">RX</div>
+      <h2 class="rxs-solutions-title">Our Solutions</h2>
+      <p class="rxs-solutions-subtitle">
+        The Complete Pharmacy Intelligence Platform. Reconciliation is just the start. RxDelta gives you the financial visibility to run a more profitable pharmacy.
+      </p>
+    </div>
+
+    <!-- Core Analytics -->
+    <div class="rxs-solutions-group">
+      <div class="rxs-solutions-group-label">Core Analytics</div>
+
+      <div class="rxs-solutions-grid rxs-solutions-grid-3">
+        <div class="rxs-solution-card">
+          <div class="rxs-card-visual">
+            <div class="rxs-visual-flow">
+              <div class="rxs-mini-box">
+                <div class="rxs-mini-icon">□</div>
+                <span>Billing<br>Export</span>
+              </div>
+              <div class="rxs-plus-badge">+</div>
+              <div class="rxs-mini-box">
+                <div class="rxs-mini-icon">◔</div>
+                <span>Purchase<br>Orders</span>
+              </div>
+            </div>
+          </div>
+          <h3>Automated Reconciliation</h3>
+          <p>
+            Upload your billing export and purchase orders. RxDelta matches every NDC, calculates variances, and flags discrepancies - in minutes, not hours.
+          </p>
+        </div>
+
+        <div class="rxs-solution-card">
+          <div class="rxs-card-visual">
+            <div class="rxs-circle-system">
+              <div class="rxs-ring rxs-ring-one"></div>
+              <div class="rxs-ring rxs-ring-two"></div>
+
+              <span class="rxs-node rxs-node-r rxs-n1">R</span>
+              <span class="rxs-node rxs-node-r rxs-n2">R</span>
+              <span class="rxs-node rxs-node-r rxs-n3">R</span>
+              <span class="rxs-node rxs-node-a rxs-n4">A</span>
+              <span class="rxs-node rxs-node-a rxs-n5">A</span>
+              <span class="rxs-node rxs-node-a rxs-n6">A</span>
+
+              <div class="rxs-center-hex">RX</div>
+            </div>
+          </div>
+          <h3>NDC Swap Detection</h3>
+          <p>
+            Our algorithm catches when the same drug is billed under different NDC codes across insurers. It's the hidden revenue leak most pharmacies don't even know they have.
+          </p>
+        </div>
+
+        <div class="rxs-solution-card">
+          <div class="rxs-card-visual">
+            <div class="rxs-product-demo">
+              <div class="rxs-product-row">
+                <div class="rxs-thumb-box"></div>
+                <div class="rxs-product-lines">
+                  <strong>Remittance</strong>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <div class="rxs-product-footer">
+                <div class="rxs-dots"></div>
+                <a href="#">Review</a>
+              </div>
+            </div>
+          </div>
+          <h3>A/R Aging &amp; Remittance</h3>
+          <p>
+            Upload remittance files and instantly see aging buckets - 0-30, 31-60, 61-90, and 90+ days. Track collection rates, open claims, and denial patterns.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intelligence & Compliance -->
+    <div class="rxs-solutions-group">
+      <div class="rxs-solutions-group-label">Intelligence &amp; Compliance</div>
+
+      <div class="rxs-solutions-grid rxs-solutions-grid-2">
+        <div class="rxs-solution-card">
+          <div class="rxs-card-badge-row">
+            <span class="rxs-beta-badge">Beta</span>
+          </div>
+          <div class="rxs-card-visual">
+            <div class="rxs-stack-wrap">
+              <div class="rxs-stack-card left"></div>
+              <div class="rxs-stack-card center">Insights</div>
+              <div class="rxs-stack-card right"></div>
+            </div>
+          </div>
+          <h3>Payer &amp; PBM Insights</h3>
+          <p>
+            Deep-dive into which insurers pay fairly and which don't. Break down claims and reimbursement by PBM, BIN, and carrier.
+          </p>
+        </div>
+
+        <div class="rxs-solution-card">
+          <div class="rxs-card-visual">
+            <div class="rxs-graph-box">
+              <div class="rxs-graph-tag">Risk Score</div>
+              <div class="rxs-graph-price">Alert</div>
+              <svg width="190" height="110" viewBox="0 0 190 110">
+                <line x1="20" y1="88" x2="170" y2="88" stroke="#ebe4f7" stroke-width="1"/>
+                <line x1="20" y1="20" x2="20" y2="88" stroke="#ebe4f7" stroke-width="1"/>
+                <line x1="20" y1="70" x2="170" y2="70" stroke="#f3eefb" stroke-width="1"/>
+                <line x1="20" y1="52" x2="170" y2="52" stroke="#f3eefb" stroke-width="1"/>
+                <line x1="20" y1="34" x2="170" y2="34" stroke="#f3eefb" stroke-width="1"/>
+
+                <polyline
+                  points="36,80 70,78 98,60 126,48 156,26"
+                  fill="none"
+                  stroke="url(#rxsGraphGrad)"
+                  stroke-width="2.5"
+                />
+
+                <circle cx="36" cy="80" r="2.8" fill="#e28a8a"/>
+                <circle cx="70" cy="78" r="2.8" fill="#efb35e"/>
+                <circle cx="98" cy="60" r="2.8" fill="#efb35e"/>
+                <circle cx="126" cy="48" r="2.8" fill="#d7b24f"/>
+                <circle cx="156" cy="26" r="3.4" fill="#63b874"/>
+
+                <defs>
+                  <linearGradient id="rxsGraphGrad" x1="36" y1="80" x2="156" y2="26" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#e28a8a"/>
+                    <stop offset="45%" stop-color="#efb35e"/>
+                    <stop offset="100%" stop-color="#63b874"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+          <h3>Aberrant Billing Calculator</h3>
+          <p>
+            Analyze your billing data against PBM aberrant product lists. Get compliance scores, risk assessments, and corrective action plans.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Workflow Tools -->
+    <div class="rxs-solutions-group">
+      <div class="rxs-solutions-group-label">Workflow Tools</div>
+
+      <div class="rxs-solutions-grid rxs-solutions-grid-3">
+        <div class="rxs-solution-card">
+          <div class="rxs-card-badge-row">
+            <span class="rxs-beta-badge">Beta</span>
+          </div>
+          <div class="rxs-card-visual">
+            <div class="rxs-product-demo">
+              <div class="rxs-product-row">
+                <div class="rxs-thumb-box"></div>
+                <div class="rxs-product-lines">
+                  <strong>Refill Calendar</strong>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <div class="rxs-product-footer">
+                <div class="rxs-dots"></div>
+                <a href="#">Track</a>
+              </div>
+            </div>
+          </div>
+          <h3>Rx Refill Tracking</h3>
+          <p>
+            Manage prescription refills with a calendar view, automatic insurance timing rules, and configurable notifications - never miss a billable refill window.
+          </p>
+        </div>
+
+        <div class="rxs-solution-card">
+          <div class="rxs-card-visual">
+            <div class="rxs-rank-wrap">
+              <div class="rxs-rank-box small">☆</div>
+              <div class="rxs-rank-box big">1</div>
+              <div class="rxs-rank-box small">⚑</div>
+            </div>
+          </div>
+          <h3>Star &amp; Flag Reports</h3>
+          <p>
+            Bookmark important NDCs and flag items for review with notes. Export flagged items and track priority items across reports.
+          </p>
+        </div>
+
+        <div class="rxs-solution-card">
+          <div class="rxs-card-visual">
+            <div class="rxs-search-visual">
+              <div class="rxs-search-circle"></div>
+              <div class="rxs-search-bar"></div>
+            </div>
+          </div>
+          <h3>BIN Directory &amp; NPI Lookup</h3>
+          <p>
+            Search 1,000+ BIN-to-PBM mappings and verify pharmacy NPI numbers instantly - no more digging through spreadsheets or calling clearinghouses.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Platform -->
+    <div class="rxs-solutions-group">
+      <div class="rxs-solutions-group-label">Platform</div>
+
+      <div class="rxs-solutions-grid rxs-solutions-grid-2">
+        <div class="rxs-solution-card">
+          <div class="rxs-card-visual">
+            <div class="rxs-stack-wrap">
+              <div class="rxs-stack-card left"></div>
+              <div class="rxs-stack-card center">Dashboard</div>
+              <div class="rxs-stack-card right"></div>
+            </div>
+          </div>
+          <h3>Multi-Location Dashboard</h3>
+          <p>
+            Run multiple pharmacies? Get group-level analytics, per-location comparisons, and consolidated reporting across your entire operation.
+          </p>
+        </div>
+
+        <div class="rxs-solution-card">
+          <div class="rxs-card-visual">
+            <div class="rxs-product-demo">
+              <div class="rxs-product-row">
+                <div class="rxs-thumb-box"></div>
+                <div class="rxs-product-lines">
+                  <strong>PDF &amp; CSV</strong>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <div class="rxs-product-footer">
+                <div class="rxs-dots"></div>
+                <a href="#">Export</a>
+              </div>
+            </div>
+          </div>
+          <h3>PDF &amp; CSV Exports</h3>
+          <p>
+            Generate clean reports in one click. Share them with your accountant, your partners, or your team - in the format they need.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!--Our Solutions Section End -->
+
+
+<!--Our Testimonial Section  Start-->
+
+ <section class="rxs-testimonials-main">
+  <div class="rxs-testimonials-container">
+
+    <div class="rxs-testimonials-header">
+    <div class="rxs-testimonials-icon-box">RX</div>
+      <h2 class="rxs-testimonials-title">What Our Clients Say</h2>
+      <p class="rxs-testimonials-subtitle">
+        Trusted by pharmacies and healthcare teams who want smarter workflows,
+        better visibility, and more accurate reporting.
+      </p>
+    </div>
+
+    <div class="rxs-testimonials-grid">
+
+      <div class="rxs-testimonial-card">
+        <div class="rxs-testimonial-stars">★★★★★</div>
+        <p class="rxs-testimonial-text">
+          RxDelta helped us identify billing mismatches much faster than our old process.
+          What used to take hours now takes minutes, and our team has much better visibility.
+        </p>
+        <div class="rxs-testimonial-user">
+          <div class="rxs-testimonial-avatar">A</div>
+          <div class="rxs-testimonial-meta">
+            <h4>Ali Raza</h4>
+            <span>Pharmacy Operations Manager</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rxs-testimonial-card rxs-testimonial-featured">
+        <div class="rxs-testimonial-stars">★★★★★</div>
+        <p class="rxs-testimonial-text">
+          The NDC swap detection feature alone has been a game changer for us.
+          We discovered hidden revenue leaks we didn’t even know were affecting our claims.
+        </p>
+        <div class="rxs-testimonial-user">
+          <div class="rxs-testimonial-avatar">S</div>
+          <div class="rxs-testimonial-meta">
+            <h4>Sarah Khan</h4>
+            <span>Revenue Cycle Specialist</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rxs-testimonial-card">
+        <div class="rxs-testimonial-stars">★★★★★</div>
+        <p class="rxs-testimonial-text">
+          Clean reports, simple dashboard, and strong analytics. It makes it easier for us
+          to track remittance issues, aging buckets, and performance across locations.
+        </p>
+        <div class="rxs-testimonial-user">
+          <div class="rxs-testimonial-avatar">M</div>
+          <div class="rxs-testimonial-meta">
+            <h4>Michael David</h4>
+            <span>Multi-Store Pharmacy Owner</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!--Our Testimonial Section  End-->
+
+
+<!--FAQ Section Start-->
+<section class="rxs-faq-main">
+  <div class="rxs-faq-container">
+
+    <div class="rxs-faq-header">
+      <div class="rxs-faq-icon-box">Rx</div>
+      <h2 class="rxs-faq-title">Frequently Asked Questions</h2>
+      <p class="rxs-faq-subtitle">
+        Everything you need to know about how RxAuditwise helps pharmacies improve visibility,
+        reduce billing issues, and streamline reporting.
+      </p>
+    </div>
+
+    <div class="rxs-faq-list">
+
+      <div class="rxs-faq-item active">
+        <button class="rxs-faq-question">
+          <span>What does RxAuditwise actually help pharmacies with?</span>
+          <span class="rxs-faq-toggle">−</span>
+        </button>
+        <div class="rxs-faq-answer">
+          <p>
+            RxAuditwise helps pharmacies reconcile billing data, detect NDC swaps, monitor remittance and aging,
+            identify reimbursement issues, and generate clear reports that improve financial visibility.
+          </p>
+        </div>
+      </div>
+
+      <div class="rxs-faq-item">
+        <button class="rxs-faq-question">
+          <span>How does NDC Swap Detection work?</span>
+          <span class="rxs-faq-toggle">+</span>
+        </button>
+        <div class="rxs-faq-answer">
+          <p>
+            Our system identifies cases where the same drug has been billed under different NDC codes.
+            This helps pharmacies catch hidden shortages, surpluses, and revenue leaks that are often missed in manual reviews.
+          </p>
+        </div>
+      </div>
+
+      <div class="rxs-faq-item">
+        <button class="rxs-faq-question">
+          <span>Can I upload remittance and billing files directly?</span>
+          <span class="rxs-faq-toggle">+</span>
+        </button>
+        <div class="rxs-faq-answer">
+          <p>
+            Yes. RxDelta is designed to work with billing exports, purchase orders, remittance files,
+            and related operational data so your team can analyze everything in one workflow.
+          </p>
+        </div>
+      </div>
+
+      <div class="rxs-faq-item">
+        <button class="rxs-faq-question">
+          <span>Is RxDelta useful for multi-location pharmacies?</span>
+          <span class="rxs-faq-toggle">+</span>
+        </button>
+        <div class="rxs-faq-answer">
+          <p>
+            Absolutely. The platform includes multi-location dashboard functionality so you can compare performance,
+            review trends, and manage reporting across your full pharmacy operation.
+          </p>
+        </div>
+      </div>
+
+      <div class="rxs-faq-item">
+        <button class="rxs-faq-question">
+          <span>Can I export reports and share them with my team?</span>
+          <span class="rxs-faq-toggle">+</span>
+        </button>
+        <div class="rxs-faq-answer">
+          <p>
+            Yes. You can export reports in clean PDF and CSV formats, making it easy to share insights
+            with accountants, partners, managers, and internal teams.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!--FAQ Section END-->
+  <!-- Footer -->
+  <footer class="rxa-footer">
+    <div class="container">
+      <div class="rxa-footer-top">
+
+        <div class="rxa-footer-about">
+          <div class="rxa-footer-logo">RX<span>Audit</span></div>
+          <p>
+            RXAudit is a pharmacy audit software solution designed to compare bills with insurance claims and highlight correct, short, and excess medicine entries with accuracy.
+          </p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <div class="rxa-footer-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Features</a>
+            <a href="#">Contact Us</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          <div class="rxa-footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Disclaimer</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Contact Info</h4>
+          <div class="rxa-footer-contact">
+            <a href="mailto:info@rxaudit.com">info@rxaudit.com</a>
+            <a href="tel:+1234567890">+1 234 567 890</a>
+            <a href="#">Pharmacy Audit Solutions</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="rxa-footer-bottom">
+        <p>© 2026 RXAudit. All Rights Reserved.</p>
+        <div class="rxa-socials">
+          <a href="#">Fb</a>
+          <a href="#">In</a>
+          <a href="#">Tw</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+ 
+<script src="rxaudit.js"></script>
+</body>
+</html>

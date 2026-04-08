@@ -1,0 +1,449 @@
+<section class="ndc-swap-demo">
+  <div class="ndc-demo-container">
+    <div class="ndc-demo-header">
+      <h2>What Is an <span>NDC Swap</span>?</h2>
+      <p>
+        You dispensed the right drug - but billed it under an old or mismatched NDC.
+        It happens when codes change, package sizes shift, or a different manufacturer ships.
+        The result? A shortage on paper that doesn't exist on your shelf, and money you'll never get back.
+      </p>
+    </div>
+
+    <div class="ndc-cards-wrap" id="ndcCardsWrap">
+      <div class="ndc-card ndc-left-card">
+        <div class="ndc-card-icon">⚗</div>
+        <div class="ndc-card-dot"></div>
+        <h3>Ibuprofen 200mg</h3>
+        <p class="ndc-code">00169-6339-10</p>
+        <div class="ndc-amount ndc-negative" id="leftAmount">-300</div>
+        <div class="ndc-label">SHORTAGE</div>
+      </div>
+
+      <div class="ndc-swap-badge" id="swapBadge">
+        <span>🔗</span>
+        <span>Same Drug, Different Code</span>
+      </div>
+
+      <div class="ndc-card ndc-right-card">
+        <div class="ndc-card-icon">⚗</div>
+        <div class="ndc-card-dot"></div>
+        <h3>Ibuprofen 200mg</h3>
+        <p class="ndc-code">45802-1701-01</p>
+        <div class="ndc-amount ndc-positive" id="rightAmount">+300</div>
+        <div class="ndc-label">SURPLUS</div>
+      </div>
+
+      <div class="ndc-scan-line" id="scanLine"></div>
+    </div>
+
+    <div class="ndc-result" id="ndcResult">
+      <span class="neg">-300</span>
+      <span class="eq-symbol">+</span>
+      <span class="pos">+300</span>
+      <span class="eq-symbol">=</span>
+      <span class="zero">0</span>
+    </div>
+
+    <div class="ndc-demo-btn-wrap">
+      <button id="detectSwapBtn" class="ndc-demo-btn">Detect The Swap</button>
+    </div>
+  </div>
+</section>
+
+<style>
+
+.ndc-swap-demo {
+  position: relative;
+  padding: 90px 20px 80px;
+  background: #f7f8f7;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.ndc-swap-demo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: 30px 52px;
+  pointer-events: none;
+}
+
+.ndc-demo-container {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.ndc-demo-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 60px;
+}
+
+.ndc-demo-header h2 {
+  font-size: 58px;
+  line-height: 1.06;
+  margin: 0 0 18px;
+  color: #111;
+  font-weight: 800;
+}
+
+.ndc-demo-header h2 span {
+  background: linear-gradient(90deg, #ff6f91 0%, #8f6dff 45%, #52d5cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ndc-demo-header p {
+  margin: 0 auto;
+  max-width: 760px;
+  font-size: 18px;
+  line-height: 1.55;
+  color: #7d7d7d;
+}
+
+.ndc-cards-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 110px;
+  min-height: 340px;
+  margin-bottom: 44px;
+}
+
+.ndc-card {
+  position: relative;
+  width: 260px;
+  min-height: 270px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow:
+    0 20px 50px rgba(143, 109, 255, 0.10),
+    0 0 0 1px rgba(255,255,255,0.65) inset;
+  padding: 34px 34px 30px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.ndc-card:hover {
+  transform: translateY(-6px);
+}
+
+.ndc-card-icon {
+  font-size: 28px;
+  color: #8d70ff;
+  margin-bottom: 34px;
+  opacity: 0.95;
+}
+
+.ndc-card-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  right: 22px;
+  top: 22px;
+  background: #8d70ff;
+}
+
+.ndc-card h3 {
+  margin: 0 0 10px;
+  font-size: 21px;
+  font-weight: 700;
+  color: #222;
+}
+
+.ndc-code {
+  margin: 0 0 26px;
+  font-size: 14px;
+  color: #8d8d8d;
+  letter-spacing: 1px;
+}
+
+.ndc-amount {
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 20px;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.ndc-negative {
+  color: #8f6dff;
+}
+
+.ndc-positive {
+  color: #8f6dff;
+}
+
+.ndc-label {
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #8f6dff;
+}
+
+.ndc-swap-badge {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 28px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #8f6dff 0%, #9a73ff 100%);
+  color: #181818;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0 0 40px rgba(143, 109, 255, 0.45);
+  z-index: 4;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.ndc-swap-badge span:first-child {
+  font-size: 22px;
+}
+
+.ndc-scan-line {
+  position: absolute;
+  left: 50%;
+  top: 18px;
+  width: 74%;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent 0%, rgba(143,109,255,0.2) 20%, rgba(143,109,255,0.95) 50%, rgba(143,109,255,0.2) 80%, transparent 100%);
+  transform: translateX(-50%);
+  opacity: 0;
+  box-shadow: 0 0 24px rgba(143,109,255,0.75);
+  z-index: 3;
+}
+
+.ndc-result {
+  text-align: center;
+  font-size: 54px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: all 0.55s ease;
+  margin-bottom: 26px;
+}
+
+.ndc-result.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ndc-result .neg {
+  color: #ff6a6a;
+}
+
+.ndc-result .pos {
+  color: #31d39a;
+}
+
+.ndc-result .zero {
+  color: #8f6dff;
+}
+
+.ndc-result .eq-symbol {
+  color: #666;
+  margin: 0 10px;
+}
+
+.ndc-demo-btn-wrap {
+  text-align: center;
+}
+
+.ndc-demo-btn {
+  border: 0;
+  background: #ffffff;
+  color: #8a8a8a;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 18px 34px;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+  transition: all 0.3s ease;
+}
+
+.ndc-demo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.10);
+}
+
+.ndc-demo-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.ndc-cards-wrap.scanning .ndc-scan-line {
+  opacity: 1;
+  animation: ndcScanMove 1.4s ease-in-out infinite;
+}
+
+.ndc-cards-wrap.scanning .ndc-left-card,
+.ndc-cards-wrap.scanning .ndc-right-card {
+  box-shadow:
+    0 20px 50px rgba(143, 109, 255, 0.14),
+    0 0 0 1px rgba(255,255,255,0.75) inset,
+    0 0 30px rgba(143,109,255,0.18);
+}
+
+.ndc-cards-wrap.detected .ndc-left-card {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.ndc-cards-wrap.detected .ndc-right-card {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.ndc-cards-wrap.detected .ndc-swap-badge {
+  box-shadow: 0 0 50px rgba(143, 109, 255, 0.65);
+}
+
+@keyframes ndcScanMove {
+  0% {
+    top: 18px;
+    opacity: 0.2;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    top: 150px;
+    opacity: 1;
+  }
+  100% {
+    top: 275px;
+    opacity: 0.2;
+  }
+}
+
+@media (max-width: 991px) {
+  .ndc-demo-header h2 {
+    font-size: 42px;
+  }
+
+  .ndc-demo-header p {
+    font-size: 16px;
+  }
+
+  .ndc-cards-wrap {
+    gap: 40px;
+  }
+
+  .ndc-card {
+    width: 220px;
+    padding: 28px 24px;
+  }
+
+  .ndc-amount {
+    font-size: 46px;
+  }
+
+  .ndc-swap-badge {
+    font-size: 16px;
+    padding: 14px 22px;
+  }
+
+  .ndc-result {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ndc-swap-demo {
+    padding: 70px 16px;
+  }
+
+  .ndc-demo-header h2 {
+    font-size: 34px;
+  }
+
+  .ndc-cards-wrap {
+    flex-direction: column;
+    gap: 24px;
+    min-height: auto;
+    padding-bottom: 20px;
+  }
+
+  .ndc-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .ndc-swap-badge {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 8px 0;
+  }
+
+  .ndc-scan-line {
+    display: none;
+  }
+
+  .ndc-result {
+    font-size: 34px;
+  }
+
+  .ndc-demo-btn {
+    font-size: 16px;
+    padding: 16px 24px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const detectBtn = document.getElementById("detectSwapBtn");
+  const cardsWrap = document.getElementById("ndcCardsWrap");
+  const result = document.getElementById("ndcResult");
+
+  let detected = false;
+  let scanning = false;
+
+  detectBtn.addEventListener("click", function () {
+    if (scanning) return;
+
+    if (!detected) {
+      scanning = true;
+      detectBtn.disabled = true;
+      detectBtn.textContent = "Scanning NDC...";
+
+      result.classList.remove("show");
+      cardsWrap.classList.remove("detected");
+      cardsWrap.classList.add("scanning");
+
+      setTimeout(function () {
+        cardsWrap.classList.remove("scanning");
+        cardsWrap.classList.add("detected");
+        result.classList.add("show");
+
+        detectBtn.disabled = false;
+        detectBtn.textContent = "Reset Demo";
+
+        detected = true;
+        scanning = false;
+      }, 2600);
+    } else {
+      cardsWrap.classList.remove("detected", "scanning");
+      result.classList.remove("show");
+
+      detectBtn.textContent = "Detect The Swap";
+      detectBtn.disabled = false;
+
+      detected = false;
+      scanning = false;
+    }
+  });
+});
+</script>

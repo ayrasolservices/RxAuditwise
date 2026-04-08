@@ -1,0 +1,119 @@
+<!-- HEADER FILE (header.html) -->
+
+<style>
+ .rxa-header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:999;
+      background:rgba(118, 32, 32, 0.08);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,0.12);
+    }
+
+    .rxa-header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 0;
+    }
+
+    .rxa-logo{
+      font-size:30px;
+      font-weight:800;
+      color:#fff;
+      letter-spacing:0.5px;
+    }
+
+    .rxa-logo span{
+      color:#ddd6fe;
+    }
+
+    .rxa-nav{
+      display:flex;
+      align-items:center;
+      gap:30px;
+    }
+
+    .rxa-nav a{
+      color:#fff;
+      font-size:16px;
+      font-weight:500;
+      position:relative;
+      transition:0.3s ease;
+    }
+
+    .rxa-nav a:hover{
+      color:#e9ddff;
+    }
+
+    .rxa-nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0;
+      height:2px;
+      background:#fff;
+      transition:0.3s ease;
+    }
+
+    .rxa-nav a:hover::after{
+      width:100%;
+    }
+
+    .rxa-header-btn{
+      display:inline-block;
+      background:#fff;
+      color:#7c3aed;
+      padding:12px 22px;
+      border-radius:30px;
+      font-size:15px;
+      font-weight:700;
+      transition:0.3s ease;
+    }
+
+    .rxa-header-btn:hover{
+      background:#ede9fe;
+    }
+
+    .rxa-menu-toggle{
+      display:none;
+      flex-direction:column;
+      gap:5px;
+      cursor:pointer;
+    }
+
+    .rxa-menu-toggle span{
+      width:28px;
+      height:3px;
+      background:#fff;
+      border-radius:4px;
+    }
+</style>
+
+<header class="rxa-header">
+    <div class="container">
+      <div class="rxa-header-inner">
+        <a href="#" class="rxa-logo">RX<span>Audit</span></a>
+
+        <nav class="rxa-nav" id="rxaNav">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Features</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+        </nav>
+
+        <a href="#" class="rxa-header-btn">Request Demo</a>
+
+        <div class="rxa-menu-toggle" id="rxaMenuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
