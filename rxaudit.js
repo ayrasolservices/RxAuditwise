@@ -12,10 +12,10 @@
           C: [22, 19, 25, 30, 26, 31, 38, 34, 40, 46, 50, 56]
         },
         rows: [
-          ["00169-6339-10", "IBUPROFEN 200MG", "820", "650", "2 pkg short", "short"],
-          ["00378-0125-50", "METFORMIN 500MG", "280", "300", "1 pkg surp.", "surplus"],
-          ["55390-1701-01", "OMEPRAZOLE 20MG", "180", "0", "6 pkg short", "short"],
-          ["00093-7180-01", "LISINOPRIL 10MG", "420", "420", "Match", "match"]
+          ["73059000160", "ACCRUFER - 30MG - CAP", "180", "60", "SHORT - (120.0)"],
+          ["00024592410", "ADMELOG - 100U\ML - INJ", "60", "60",  "	OK - (0.0)"],
+          ["00032301613", "CREON - 36-114-180 - CAP", "200", "300",  "OVER - (100.0)"],
+          
         ]
       },
       B: {
@@ -30,10 +30,10 @@
           C: [18, 23, 21, 26, 30, 33, 35, 39, 44, 48, 53, 60]
         },
         rows: [
-          ["00310-0751-39", "ATORVASTATIN 20MG", "500", "500", "Match", "match"],
-          ["65862-0420-90", "GABAPENTIN 300MG", "620", "580", "1 pkg short", "short"],
-          ["13668-0118-10", "PANTOPRAZOLE 40MG", "210", "225", "1 pkg surp.", "surplus"],
-          ["00591-0461-01", "LOSARTAN 50MG", "300", "300", "Match", "match"]
+          ["04351078810", "AEROCHAMBER", "1", "0", "SHORT - (1.0)"],
+          ["00003089421", "ELIQUIS - 5MG - TAB", "780", "780", "	OK - (0.0)"],
+          ["00002882427", "HUMULIN R - 500U\ML - INJ", "200", "300", "OVER - (100.0)"],
+          
         ]
       },
       C: {
@@ -48,10 +48,10 @@
           C: [24, 26, 28, 34, 38, 42, 46, 49, 54, 58, 63, 69]
         },
         rows: [
-          ["59762-3720-01", "ALBUTEROL HFA", "190", "220", "2 pkg surp.", "surplus"],
-          ["00074-6620-13", "SERTRALINE 50MG", "410", "410", "Match", "match"],
-          ["65862-0186-99", "ESCITALOPRAM 10MG", "275", "240", "1 pkg short", "short"],
-          ["55111-0683-01", "CETIRIZINE 10MG", "330", "330", "Match", "match"]
+          ["08290326895", "BD ALCOHOL SWAB - EA", "100", "0", "SHORT - (100)"],
+          ["00003089321", "ELIQUIS - 2.5MG - TAB", "180", "180", "OK - (0.0)"],
+          ["00310621030", "FARXIGA - 10MG - TAB", "200", "300", "OVER - (100.0)"],
+          
         ]
       },
       all: {
@@ -66,12 +66,15 @@
           C: [22, 19, 25, 30, 26, 31, 38, 34, 40, 46, 50, 56]
         },
         rows: [
-          ["00169-6339-10", "IBUPROFEN 200MG", "820", "650", "2 pkg short", "short"],
-          ["00378-0125-50", "METFORMIN 500MG", "280", "300", "1 pkg surp.", "surplus"],
-          ["55390-1701-01", "OMEPRAZOLE 20MG", "180", "0", "6 pkg short", "short"],
-          ["00093-7180-01", "LISINOPRIL 10MG", "420", "420", "Match", "match"],
-          ["00310-0751-39", "ATORVASTATIN 20MG", "500", "500", "Match", "match"],
-          ["59762-3720-01", "ALBUTEROL HFA", "190", "220", "2 pkg surp.", "surplus"]
+          ["73059000160", "ACCRUFER - 30MG - CAP", "180", "60", "SHORT - (120.0)"],
+          ["00024592410", "ADMELOG - 100U\ML - INJ", "60", "60",  "	OK - (0.0)"],
+          ["00032301613", "CREON - 36-114-180 - CAP", "200", "300",  "OVER - (100.0)"],
+          ["04351078810", "AEROCHAMBER", "1", "0", "SHORT - (1.0)"],
+          ["00003089421", "ELIQUIS - 5MG - TAB", "780", "780", "	OK - (0.0)"],
+          ["00002882427", "HUMULIN R - 500U\ML - INJ", "200", "300", "OVER - (100.0)"],
+           ["08290326895", "BD ALCOHOL SWAB - EA", "100", "0", "SHORT - (100)"],
+          ["00003089321", "ELIQUIS - 2.5MG - TAB", "180", "180", "OK - (0.0)"],
+          ["00310621030", "FARXIGA - 10MG - TAB", "200", "300", "OVER - (100.0)"]
         ]
       }
     };
@@ -220,51 +223,7 @@
 
     // Footer Js End
 
-    // NDC Swap Demo Section JS Start
-  document.addEventListener("DOMContentLoaded", function () {
-  const detectBtn = document.getElementById("detectSwapBtn");
-  const cardsWrap = document.getElementById("ndcCardsWrap");
-  const result = document.getElementById("ndcResult");
-
-  let detected = false;
-  let scanning = false;
-
-  detectBtn.addEventListener("click", function () {
-    if (scanning) return;
-
-    if (!detected) {
-      scanning = true;
-      detectBtn.disabled = true;
-      detectBtn.textContent = "Scanning NDC...";
-
-      result.classList.remove("show");
-      cardsWrap.classList.remove("detected");
-      cardsWrap.classList.add("scanning");
-
-      setTimeout(function () {
-        cardsWrap.classList.remove("scanning");
-        cardsWrap.classList.add("detected");
-        result.classList.add("show");
-
-        detectBtn.disabled = false;
-        detectBtn.textContent = "Reset Demo";
-
-        detected = true;
-        scanning = false;
-      }, 2600);
-    } else {
-      cardsWrap.classList.remove("detected", "scanning");
-      result.classList.remove("show");
-
-      detectBtn.textContent = "Detect The Swap";
-      detectBtn.disabled = false;
-
-      detected = false;
-      scanning = false;
-    }
-  });
-});
-// NDC Swap Demo Section JS End
+  
 
 //FAQ Section JS Start
 
@@ -291,3 +250,187 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 // FAQ Section JS End
+
+const aboutCard = document.getElementById("aboutCard");
+
+    function revealOnScroll() {
+      const top = aboutCard.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (top < windowHeight - 100) {
+        aboutCard.classList.add("show");
+      }
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+
+
+    //How it Works Section JS Start
+    const howHeader = document.getElementById("howHeader");
+    const revealCards = document.querySelectorAll(".reveal-card");
+
+    function revealHowSection() {
+      const triggerBottom = window.innerHeight - 80;
+
+      if (howHeader.getBoundingClientRect().top < triggerBottom) {
+        howHeader.classList.add("show");
+      }
+
+      revealCards.forEach((card, index) => {
+        if (card.getBoundingClientRect().top < triggerBottom) {
+          setTimeout(() => {
+            card.classList.add("show");
+          }, index * 120);
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealHowSection);
+    window.addEventListener("load", revealHowSection);
+
+    //How it Works Section JS End
+
+
+    //One Smart Platform for Pharmacy Audits & Reconciliation Section JS Start
+
+    document.querySelectorAll('.flip-card').forEach(card => {
+      card.addEventListener('click', function () {
+        if (window.innerWidth <= 768) {
+          const inner = this.querySelector('.flip-card-inner');
+          inner.style.transform =
+            inner.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+        }
+      });
+    });
+    //One Smart Platform for Pharmacy Audits & Reconciliation Section JS End
+
+
+//Works With Your best Supplier and Files Section JS Start
+ const dealerTags = document.querySelectorAll(".dealer-tag");
+
+  dealerTags.forEach(tag => {
+    tag.addEventListener("click", function () {
+      dealerTags.forEach(item => item.classList.remove("active-dealer"));
+      this.classList.add("active-dealer");
+    });
+  });
+  //Works With Your best Supplier and Files Section JS End
+
+  //Testimonial Section JS Start
+   const track = document.getElementById("testimonialsTrack");
+  const slides = document.querySelectorAll(".testimonial-slide");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const dotsContainer = document.getElementById("testimonialDots");
+  const slider = document.getElementById("testimonialsSlider");
+
+  let currentIndex = 0;
+  let autoSlide;
+
+  function createDots() {
+    dotsContainer.innerHTML = "";
+    slides.forEach((_, index) => {
+      const dot = document.createElement("div");
+      dot.classList.add("testimonial-dot");
+      if (index === currentIndex) dot.classList.add("active");
+
+      dot.addEventListener("click", () => {
+        currentIndex = index;
+        updateSlider();
+        restartAutoSlide();
+      });
+
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function updateDots() {
+    const dots = document.querySelectorAll(".testimonial-dot");
+    dots.forEach(dot => dot.classList.remove("active"));
+    if (dots[currentIndex]) {
+      dots[currentIndex].classList.add("active");
+    }
+  }
+
+  function updateSlider() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    updateDots();
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlider();
+  }
+
+  function startAutoSlide() {
+    stopAutoSlide();
+    autoSlide = setInterval(nextSlide, 3500);
+  }
+
+  function stopAutoSlide() {
+    if (autoSlide) clearInterval(autoSlide);
+  }
+
+  function restartAutoSlide() {
+    startAutoSlide();
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      restartAutoSlide();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+      restartAutoSlide();
+    });
+  }
+
+  if (slider) {
+    slider.addEventListener("mouseenter", stopAutoSlide);
+    slider.addEventListener("mouseleave", startAutoSlide);
+
+    slider.addEventListener("touchstart", stopAutoSlide, { passive: true });
+    slider.addEventListener("touchend", startAutoSlide, { passive: true });
+  }
+
+  createDots();
+  updateSlider();
+  startAutoSlide();
+  //Testimonial Section JS End
+
+  //FAQ Section JS Start
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    const question = item.querySelector(".faq-question");
+    const answer = item.querySelector(".faq-answer");
+
+    if (item.classList.contains("active")) {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+
+    question.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+
+      faqItems.forEach(faq => {
+        faq.classList.remove("active");
+        faq.querySelector(".faq-answer").style.maxHeight = null;
+      });
+
+      if (!isActive) {
+        item.classList.add("active");
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+  //FAQ Section JS End
